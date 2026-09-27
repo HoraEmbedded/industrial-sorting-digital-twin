@@ -1,0 +1,22 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.mp4 binary
+*.mov binary
+*.avi binary
+
+*.scl text
+*.awl text
+*.db text
+*.udt text
+*.md text
+*.txt text
+*.yml text
+*.yaml text
+*.json text
+*.xml text

@@ -1,0 +1,83 @@
+# -------------------------------
+# OS files
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------------
+# Editors and IDEs
+# -------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# -------------------------------
+# TIA Portal
+# -------------------------------
+*.ap* 
+*.tmp
+*.bak
+*.~*
+*.zip
+*.zap*
+*.s7p
+*.awl
+*.db
+*.udt
+*.scl
+*.lst
+*.map
+*.xls
+*.xlsx
+*.pdf
+# Keep exported source files
+!tia-portal/exports/**
+
+# -------------------------------
+# Factory I/O
+# -------------------------------
+*.fio.autosave
+*.fio.bak
+
+# -------------------------------
+# Build and logs
+# -------------------------------
+*.log
+logs/
+build/
+dist/
+tmp/
+
+# -------------------------------
+# Videos and large binaries
+# -------------------------------
+videos/*.mp4
+videos/*.mov
+videos/*.avi
+videos/*.mkv
+videos/*.webm
+# Keep placeholder and docs
+!videos/README.md
+
+# -------------------------------
+# Python
+# -------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# -------------------------------
+# Node
+# -------------------------------
+node_modules/
+npm-debug.log*
+
+# -------------------------------
+# Environment
+# -------------------------------
+.env
+.env.*
