@@ -81,3 +81,12 @@ npm-debug.log*
 # -------------------------------
 .env
 .env.*
+
+# -------------------------------
+# AutoCAD / QElectroTech
+# -------------------------------
+*.bak
+*.dwg.bak
+*.qet.bak
+*.qet.autosave
+*.qet~
