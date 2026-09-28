@@ -4,16 +4,17 @@ This document describes the workstation used for the project. It is a reference 
 
 ## Workstation
 
+## Workstation
+
 | Item              | Value                |
 |-------------------|----------------------|
-| Manufacturer      | HP        |
-| Model             | <your value>         |
-| CPU               | Intel(R) Core(TM) Ultra 7 155U (1.70 GHz)
-        |
+| Manufacturer      | HP         |
+| Model             | HP Envy x360 2-in-1 Laptop 15-fe1xxx         |
+| CPU               | Intel(R) Core(TM) Ultra 7 155U         |
 | RAM               | 32.0 GB         |
 | Storage           | 954 GB         |
-| GPU               | <your value>         |
-| Operating system  | Windows 11   |
+| GPU               | None         |
+| Operating system  | Windows 11    |
 | Architecture      | 64-bit               |
 
 ## Software
@@ -26,7 +27,7 @@ This document describes the workstation used for the project. It is a reference 
 | Factory I/O S7-PLCSIM driver   | <your value>          |
 | Automation License Manager     | V6.2 + SP5          |
 | Git for Windows                |  2.53.0.windows.1          |
-| VS Code                        | <your value>          |
+| VS Code                        | 1.139.1          |
 
 
 ## Compatibility notes
