@@ -31,6 +31,21 @@ Each entry follows this template:
 
 <!-- Add new entries at the top of this section, most recent first -->
 
+
+
+
+### 2026-09-28 - CPU 1214C DC/DC/DC appears as a catalog folder in TIA Portal
+
+- Context: Mission 3, step 4, adding a CPU to a new TIA Portal project
+- Symptom: In the "Add new device" dialog, CPU 1214C DC/DC/DC was displayed as a folder with several entries inside, not as a single clickable device
+- Attempts:
+  1. Tried to double click on the folder, nothing happened
+  2. Checked the documentation online to understand the catalog structure
+- Root cause: In TIA Portal, the CPU reference 1214C DC/DC/DC is a catalog node that contains several firmware versions. The user must expand the node and pick the desired firmware version
+- Solution: Expanded the node and selected the firmware version V4.5 or later, then clicked OK
+- Lesson learned: In TIA Portal, always expect the hardware catalog to be hierarchical. Expand nodes to see firmware versions. Pick the firmware that matches the target environment
+
+
 ### 2026-09-28 - TIA Portal V18 installation blocked by pending file rename operations
 
 - Context: Installation of TIA Portal V18 on Windows
