@@ -31,7 +31,16 @@ Each entry follows this template:
 
 <!-- Add new entries at the top of this section, most recent first -->
 
+### 2026-09-28 - PLC security settings dialog appears when adding a CPU in TIA Portal
 
+- Context: Mission 3, step 4, adding a CPU 1214C to a new TIA Portal project
+- Symptom: After validating the CPU selection, TIA Portal opened a dialog called "PLC security settings" asking for a password and a protection level
+- Attempts:
+  1. Considered setting a password, then realized it was not needed for local simulation
+  2. Checked the purpose of each protection level in the dialog
+- Root cause: Recent TIA Portal versions ask for security settings as soon as a new CPU is created, to comply with industrial cybersecurity requirements
+- Solution: Unchecked "Protects the PLC configuration data", selected no protection in the following steps, and finished the wizard. The CPU was added without a password
+- Lesson learned: In TIA Portal V15 and later, always expect the PLC security settings dialog. In local simulation, no protection is needed. In production, protection is mandatory
 
 
 ### 2026-09-28 - CPU 1214C DC/DC/DC appears as a catalog folder in TIA Portal
