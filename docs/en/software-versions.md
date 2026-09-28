@@ -7,12 +7,12 @@ This document records the reference versions used for the project. Update it whe
 | Software              | Version           | Role                                       |
 |-----------------------|-------------------|--------------------------------------------|
 | Windows               | 10 or 11 (64-bit) | Host operating system                      |
-| TIA Portal            | V16 or later      | PLC programming and project management     |
+| TIA Portal            | V18      | PLC programming and project management     |
 | S7-PLCSIM             | Matching TIA      | PLC runtime simulation                     |
-| Factory I/O           | Latest stable     | Digital twin and 3D scene                  |
+| Factory I/O           | v2.5.10     | Digital twin and 3D scene                  |
 | Factory I/O S7 driver | Latest stable     | Co-simulation between Factory I/O and PLCSIM |
 | Git for Windows       | Latest stable     | Version control                            |
-| VS Code               | Latest stable     | Code and documentation editor              |
+| VS Code               |  2.53.0.windows.1     | Code and documentation editor              |
 | QElectroTech          | Latest stable     | Electrical schematic (or AutoCAD)          |
 
 ## Notes
