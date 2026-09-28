@@ -24,9 +24,13 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - High level architecture diagram
 - Milestone plan
 - Risk register
+- Workstation environment audit
+- Tool startup and shutdown checklist
+- Real software versions recorded
 
 ### Changed
 
 - Split documentation into `docs/en/` and `docs/fr/`
 - Updated README with badges, technologies list and language switcher
 - Extended gitignore with AutoCAD and QElectroTech rules
+- Software versions table updated with installed versions
