@@ -17,6 +17,13 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - `kpi/` folder with README and data placeholder
 - Language switcher between English and French READMEs
 - Direct license link in READMEs
+- `TROUBLESHOOTING.md` with template and first entry
+- Scope definition
+- Technical assumptions and constraints
+- Software versions reference
+- High level architecture diagram
+- Milestone plan
+- Risk register
 
 ### Changed
 

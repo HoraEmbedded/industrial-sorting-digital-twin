@@ -90,3 +90,6 @@ npm-debug.log*
 *.qet.bak
 *.qet.autosave
 *.qet~
+
+# brouillon
+test.md
