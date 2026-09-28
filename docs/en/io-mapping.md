@@ -28,3 +28,5 @@ Mapping between PLCSIM and Factory I/O.
 | %Q0.4   | Lane 2 conveyor motor         | BOOL |
 | %Q0.5   | Pusher 1 command              | BOOL |
 | %Q0.6   | Pusher 2 command              | BOOL |
+
+See ../fr/ for the French version (available at the end of the project).

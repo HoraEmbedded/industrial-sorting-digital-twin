@@ -23,3 +23,4 @@
 ## Status
 
 To be completed during the project.
+See ../fr/ for the French version (available at the end of the project).
