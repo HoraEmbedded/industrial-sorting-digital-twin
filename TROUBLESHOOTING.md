@@ -31,6 +31,42 @@ Each entry follows this template:
 
 <!-- Add new entries at the top of this section, most recent first -->
 
+### 2026-01-01 - Main OB1 opened in SCL instead of LAD in TIA Portal
+
+- Context: Mission 3, step 4, writing a minimal test program in OB1
+- Symptom: The Main [OB1] block opened as text code (SCL), the LAD toolbar with contacts was missing, and the "Bit logic operations" panel showed text entries instead of contact icons
+- Attempts:
+  1. Tried to find the LAD contact toolbar in the ribbon, not present
+  2. Searched the instructions panel for bit logic icons, only SCL entries appeared
+  3. Checked online documentation and video tutorials to understand the difference between SCL and LAD blocks
+- Root cause: The Main [OB1] block was created with SCL as its programming language. The language of a block is fixed at creation time in TIA Portal and determines which editor and which instruction set are available
+- Solution: Created a new block in the project tree via Add new block, selected Function block or Organization block, and set the Language dropdown to LAD instead of SCL. Opened the new block and the graphical LAD editor appeared with the contact toolbar
+- Lesson learned: In TIA Portal, the programming language of a block is chosen at creation time. LAD and SCL blocks coexist in the same project. Always check the Language field in the Add new block dialog before clicking OK
+
+### 2026-09-28 - Factory I/O driver error "more than one instance of S7-PLCSIM has been detected"
+
+- Context: Mission 3, step 4, connecting Factory I/O to PLCSIM via the Siemens S7-PLCSIM driver
+- Symptom: Factory I/O displayed a red error message stating that more than one instance of S7-PLCSIM had been detected
+- Attempts:
+  1. Clicked CONNECT again in Factory I/O, same error
+  2. Opened Windows Task Manager to inspect running processes
+  3. Found multiple hidden S7-PLCSIM background processes left from previous sessions
+- Root cause: PLCSIM was launched several times without the previous instance being shut down. The S7-PLCSIM driver requires exactly one running instance to bind to
+- Solution: Closed every visible PLCSIM window, killed the remaining S7-PLCSIM processes in Windows Task Manager, restarted a single PLCSIM instance from TIA Portal, waited for the CPU to be in RUN, then clicked CONNECT in Factory I/O. The driver indicator turned green
+- Lesson learned: Always ensure only one PLCSIM instance is running before connecting Factory I/O. Clean up zombie processes with the Task Manager. Always start PLCSIM first, then connect the driver
+
+### 2026-09-28 - Difficulty establishing the full TIA Portal to PLCSIM to Factory I/O connection
+
+- Context: Mission 3, step 4, end to end co-simulation test
+- Symptom: The chain between TIA Portal, PLCSIM and Factory I/O did not connect on the first attempts, even with correct versions
+- Attempts:
+  1. Tried to connect PLCSIM to Factory I/O directly, failed
+  2. Tried to start Factory I/O first, then PLCSIM, failed
+  3. Followed a step by step YouTube tutorial on setting up the co-simulation, and reproduced the exact sequence
+- Root cause: The connection procedure requires a strict order. TIA Portal project must compile first, PLCSIM must be started from TIA Portal, the PLC must be in RUN, only one PLCSIM instance must exist, then Factory I/O must be opened with the Siemens S7-PLCSIM driver selected, and only then can CONNECT be pressed
+- Solution: Applied the strict sequence: compile in TIA Portal, start simulation from TIA Portal, download the program, put the CPU in RUN, verify a single PLCSIM instance, open Factory I/O, select the Siemens S7-PLCSIM driver, click CONNECT, verify the green indicator
+- Lesson learned: Industrial co-simulation follows a strict startup sequence. Documenting that sequence in the project is more valuable than trying to remember it. This is the kind of procedure that belongs in a runbook for operators and commissioning engineers
+
 ### 2026-09-28 - PLC security settings dialog appears when adding a CPU in TIA Portal
 
 - Context: Mission 3, step 4, adding a CPU 1214C to a new TIA Portal project
