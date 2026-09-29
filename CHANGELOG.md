@@ -27,6 +27,11 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Workstation environment audit
 - Tool startup and shutdown checklist
 - Real software versions recorded
+- PLC program architecture document
+- Block structure in TIA Portal: OB1, FB_Mode_Manager, FB_Sorting_Logic, FC_IO_Mapping, DB_Global
+- Full PLC tag table with symbolic names
+- Definitive I/O mapping between TIA Portal and Factory I/O
+- Naming conventions for tags, blocks and comments
 
 ### Changed
 
@@ -34,3 +39,4 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Updated README with badges, technologies list and language switcher
 - Extended gitignore with AutoCAD and QElectroTech rules
 - Software versions table updated with installed versions
+- `docs/en/io-mapping.md` promoted to single source of truth for the mapping
