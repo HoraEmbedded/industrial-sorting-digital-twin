@@ -24,7 +24,18 @@ This document describes the block structure of the PLC program, the responsibili
 - Type: Function Block
 - Language: LAD
 - Instance DB: DB_Mode_Manager
-- Responsibility: safety, start and stop, emergency stop, auto and manual mode handling
+- Responsibility:
+  - Rising edge detection on Start
+  - Emergency stop handling with fault latch
+  - Start and stop logic with self holding latch
+  - Main conveyor motor command
+  - Indicator lights
+- Networks:
+  1. Rising edge detection on Start
+  2. Fault latch
+  3. Run stop latch
+  4. Main conveyor motor command
+  5. Indicator lights
 - Called by: OB1
 
 ### FB2 - FB_Sorting_Logic

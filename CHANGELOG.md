@@ -32,6 +32,12 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Full PLC tag table with symbolic names
 - Definitive I/O mapping between TIA Portal and Factory I/O
 - Naming conventions for tags, blocks and comments
+- FB_Mode_Manager implementation with safety, mode and start stop logic
+- Emergency stop with fault latching on rising edge of Start
+- Run stop latch with self holding circuit
+- Main conveyor motor command
+- Indicator lights logic
+- PLC test log with four functional tests
 
 ### Changed
 
