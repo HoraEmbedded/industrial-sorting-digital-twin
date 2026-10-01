@@ -27,3 +27,29 @@ This document records the tests performed on the PLC program, with expected and 
 - Setup: System_Fault = 1, Emergency_Stop set back to 1, Start pulsed
 - Expected: System_Fault = 0, System_Running = 1
 - Observed: <fill in>
+
+## Mission 6 - FB_Sorting_Logic tests
+
+### Test 1 - Small box classification
+
+- Setup: System_Running = 1, Sensor_Size_Low = 1, Sensor_Size_High = 0, Sensor_Entry pulsed
+- Expected: Box_Is_Small = 1, Alignment_Done = 1, Pusher_1_Command = 1
+- Observed: <fill in>
+
+### Test 2 - Lane 1 evacuation
+
+- Setup: Sensor_Evac_Lane_1 pulsed
+- Expected: Pusher_1_Command = 0, Box_Is_Small = 0, Counter_Lane_1 = 1
+- Observed: <fill in>
+
+### Test 3 - Large box classification
+
+- Setup: Sensor_Size_Low = 1, Sensor_Size_High = 1, Sensor_Entry pulsed
+- Expected: Box_Is_Large = 1, Alignment_Done = 1, Pusher_2_Command = 1
+- Observed: <fill in>
+
+### Test 4 - Lane 2 evacuation
+
+- Setup: Sensor_Evac_Lane_2 pulsed
+- Expected: Pusher_2_Command = 0, Box_Is_Large = 0, Counter_Lane_2 = 1
+- Observed: <fill in>

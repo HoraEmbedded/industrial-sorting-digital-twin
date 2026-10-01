@@ -41,9 +41,25 @@ This document describes the block structure of the PLC program, the responsibili
 ### FB2 - FB_Sorting_Logic
 
 - Type: Function Block
-- Language: LAD or GRAPH
+- Language: LAD
 - Instance DB: DB_Sorting_Logic
-- Responsibility: box detection, size classification, pusher activation, counters
+- Responsibility:
+  - Rising edge detection on entry and evacuation sensors
+  - Box size classification with SR latches
+  - Alignment timer before pusher activation
+  - Pusher commands with SR latches
+  - Lane counters with ADD on rising edge
+- Networks:
+  1. Rising edge on entry sensor
+  2. Rising edge on lane 1 evacuation sensor
+  3. Rising edge on lane 2 evacuation sensor
+  4. Small box classification
+  5. Large box classification
+  6. Alignment timer
+  7. Pusher 1 command
+  8. Pusher 2 command
+  9. Lane 1 counter
+  10. Lane 2 counter
 - Called by: OB1
 
 ### FC1 - FC_IO_Mapping

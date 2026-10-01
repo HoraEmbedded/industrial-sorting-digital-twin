@@ -38,6 +38,15 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Main conveyor motor command
 - Indicator lights logic
 - PLC test log with four functional tests
+- FB_Sorting_Logic implementation with detection, classification, pushers and counters
+- Rising edge detection on entry and evacuation sensors
+- SR latches for box classification and pusher commands
+- Alignment timer with configurable preset
+- Lane counters using ADD_I on rising edge
+- PLC test log extended with four sorting tests
+- Factory I/O Advanced scene configuration
+- Complete I/O mapping for the Advanced scene
+- Tag additions: Reset_Button, Reset_Light, Motor_Feeder, Light_Yellow, Turn_Command, Sensor_Left_Entry, Sensor_Load_Position, Sensor_Unload_Position
 
 ### Changed
 
@@ -46,3 +55,7 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Extended gitignore with AutoCAD and QElectroTech rules
 - Software versions table updated with installed versions
 - `docs/en/io-mapping.md` promoted to single source of truth for the mapping
+- Switched from Basic scene to Advanced scene
+- Emitter controlled by Factory I/O, not by the PLC
+- Turntable command driven by the PLC
+
