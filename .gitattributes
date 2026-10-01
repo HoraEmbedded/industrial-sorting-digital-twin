@@ -20,3 +20,4 @@
 *.yaml text
 *.json text
 *.xml text
+scripts/hooks/* text eol=lf

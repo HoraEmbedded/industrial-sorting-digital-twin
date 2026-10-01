@@ -1,0 +1,10 @@
+#!/bin/sh
+# Reject commit messages that contain an em dash or an en dash.
+EM=$(printf '\342\200\224')
+EN=$(printf '\342\200\223')
+if grep -F -q -e "$EM" -e "$EN" "$1"; then
+  echo "Commit rejected: the message contains an em dash or an en dash."
+  echo "Use a comma, a colon, parentheses or a plain hyphen instead."
+  exit 1
+fi
+exit 0
