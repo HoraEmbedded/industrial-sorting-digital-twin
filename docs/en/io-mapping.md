@@ -1,62 +1,56 @@
-# I/O Mapping
+# I/O mapping
 
-Definitive mapping between PLC tags in TIA Portal and Factory I/O signals.
+Single source of truth for the link between Factory I/O and the PLC. Addresses are read from the Factory I/O driver page (driver: Siemens S7-PLCSIM).
 
-## Reference
+## Hardware addressing
 
-- PLC: Siemens S7-1200 CPU 1214C DC/DC/DC
-- Simulator: S7-PLCSIM
-- Digital twin: Factory I/O, scene Sorting by Height (Advanced)
-- Driver: Siemens S7-PLCSIM
+The on-board DI 14/DQ 10 of the CPU is moved to start address 100, so it never overlaps the process image area written by Factory I/O.
 
-## Inputs
+## Inputs (Factory I/O sensors to PLC)
 
-| PLC tag                 | Address | Type | Factory I/O signal   | Function                     |
-|-------------------------|---------|------|----------------------|------------------------------|
-| Start_Button            | %I0.0   | Bool | Start                | Start button, NO             |
-| Stop_Button             | %I0.1   | Bool | Stop                 | Stop button, NC              |
-| Emergency_Stop          | %I0.2   | Bool | Emergency stop       | Emergency stop, NC           |
-| Mode_Auto               | %I0.3   | Bool | Auto                 | Mode selector, 1 for auto    |
-| Sensor_Entry            | %I0.4   | Bool | At entry             | Box entry detection          |
-| Sensor_Size_Low         | %I0.5   | Bool | Low box              | Small box detection          |
-| Sensor_Size_High        | %I0.6   | Bool | High box             | Large box detection          |
-| Sensor_Left_Entry       | %I0.7   | Bool | At left entry        | Left lane entry              |
-| Sensor_Evac_Lane_1      | %I1.0   | Bool | At left exit         | Left lane evacuation         |
-| Sensor_Evac_Lane_2      | %I1.1   | Bool | At right exit        | Right lane evacuation        |
-| Reset_Button            | %I1.2   | Bool | Reset                | Reset button, NO             |
-| Sensor_Load_Position    | %I1.3   | Bool | At load position     | Load position reached        |
-| Sensor_Unload_Position  | %I1.4   | Bool | At unload position   | Unload position reached      |
+| PLC tag | Factory I/O tag | Type | Address | Notes |
+| --- | --- | --- | --- | --- |
+| `I_AtBack` | At back | Bool | | Role to confirm in scene-behavior.md |
+| `I_AtEntry` | At entry | Bool | | Role to confirm |
+| `I_AtFront` | At front | Bool | | Role to confirm |
+| `I_AtLeftEntry` | At left entry | Bool | | Role to confirm |
+| `I_AtLeftExit` | At left exit | Bool | | Role to confirm |
+| `I_AtLoadPosition` | At load position | Bool | | Role to confirm |
+| `I_AtRightEntry` | At right entry | Bool | | Role to confirm |
+| `I_AtRightExit` | At right exit | Bool | | Role to confirm |
+| `I_AtTurntableEntry` | At turntable entry | Bool | | Role to confirm |
+| `I_AtUnloadPosition` | At unload position | Bool | | Role to confirm |
+| `I_Auto` | Auto | Bool | | Selector in Auto |
+| `I_Manual` | Manual | Bool | | Selector in Manual, TRUE at rest in the scene |
+| `I_EmergencyStop` | Emergency stop | Bool | | Normally closed, TRUE when healthy |
+| `I_HighBox` | High box | Bool | | Light curtain, high box |
+| `I_LowBox` | Low box | Bool | | Light curtain, low box |
+| `I_Reset` | Reset | Bool | | Normally open pushbutton |
+| `I_Start` | Start | Bool | | Normally open pushbutton |
+| `I_Stop` | Stop | Bool | | Normally closed, TRUE at rest |
 
-## Outputs
+## Outputs (PLC to Factory I/O actuators)
 
-| PLC tag              | Address | Type | Factory I/O signal | Function                   |
-|----------------------|---------|------|---------------------|----------------------------|
-| Light_Green          | %Q0.0   | Bool | Green indicator     | Machine running            |
-| Light_Red            | %Q0.1   | Bool | Red indicator       | Machine stopped or fault   |
-| Motor_Main_Conveyor  | %Q0.2   | Bool | Entry conveyor      | Entry conveyor motor       |
-| Motor_Lane_1         | %Q0.3   | Bool | Left conveyor       | Left lane conveyor motor   |
-| Motor_Lane_2         | %Q0.4   | Bool | Right conveyor      | Right lane conveyor motor  |
-| Pusher_1_Command     | %Q0.5   | Bool | Remover left        | Left remover command       |
-| Pusher_2_Command     | %Q0.6   | Bool | Remover right       | Right remover command      |
-| Reset_Light          | %Q0.7   | Bool | Reset light         | Fault indicator            |
-| Motor_Feeder         | %Q1.0   | Bool | Feeder conveyor     | Feeder conveyor motor      |
-| Light_Yellow         | %Q1.1   | Bool | Yellow indicator    | Warning indicator          |
-| Turn_Command         | %Q1.2   | Bool | Turn                | Turntable command          |
+| PLC tag | Factory I/O tag | Type | Address | Notes |
+| --- | --- | --- | --- | --- |
+| `Q_Counter` | Counter | Int | | Counter display on the operator panel |
+| `Q_Emit` | Emitter 1 (Emit) | Bool | | Box emitter, behavior to confirm |
+| `Q_EntryConveyor` | Entry conveyor | Bool | | |
+| `Q_FeederConveyor` | Feeder conveyor | Bool | | |
+| `Q_GreenIndicator` | Green indicator | Bool | | Tower light |
+| `Q_LeftConveyor` | Left conveyor | Bool | | |
+| `Q_Load` | Load | Bool | | Turntable, role to confirm |
+| `Q_RedIndicator` | Red indicator | Bool | | Tower light |
+| `Q_RemoverLeft` | Remover left | Bool | | Behavior to confirm |
+| `Q_RemoverRight` | Remover right | Bool | | Behavior to confirm |
+| `Q_ResetLight` | Reset light | Bool | | Lamp of the Reset pushbutton |
+| `Q_RightConveyor` | Right conveyor | Bool | | |
+| `Q_StartLight` | Start light | Bool | | Lamp of the Start pushbutton |
+| `Q_StopLight` | Stop light | Bool | | Lamp of the Stop pushbutton |
+| `Q_Turn` | Turn | Bool | | Turntable, role to confirm |
+| `Q_Unload` | Unload | Bool | | Turntable, role to confirm |
+| `Q_YellowIndicator` | Yellow indicator | Bool | | Tower light |
 
-## Internal memory bits
+## Tags not used by the PLC
 
-| PLC tag              | Address | Type | Function                   |
-|----------------------|---------|------|----------------------------|
-| System_Running       | %M0.0   | Bool | System running state       |
-| System_Fault         | %M0.1   | Bool | System fault state         |
-| Box_Detected         | %M0.2   | Bool | Box currently detected     |
-| Box_Is_Small         | %M0.3   | Bool | Current box is small       |
-| Box_Is_Large         | %M0.4   | Bool | Current box is large       |
-
-## Rules
-
-- This file is the single source of truth for the mapping
-- Any change must be applied to both TIA Portal and Factory I/O
-- Never reuse an address for two different signals
-- Factory I/O internal signals (Paused, Running, Reset, Time Scale, Camera Position) are never mapped
-- The emitter is controlled by Factory I/O, not by the PLC
+The Factory I/O system tags (Paused, Reset, Running, Time Scale, Camera Position, Pause, Run) control the simulator, not the machine. The unnamed sensor slots are unused.
