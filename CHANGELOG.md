@@ -33,7 +33,7 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Definitive I/O mapping between TIA Portal and Factory I/O
 - Naming conventions for tags, blocks and comments
 - FB_Mode_Manager implementation with safety, mode and start stop logic
-- Emergency stop with fault latching on rising edge of Start
+- Emergency stop with fault latching, cleared by the Reset button
 - Run stop latch with self holding circuit
 - Main conveyor motor command
 - Indicator lights logic
@@ -58,4 +58,10 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Switched from Basic scene to Advanced scene
 - Emitter controlled by Factory I/O, not by the PLC
 - Turntable command driven by the PLC
+- Merged duplicate folders: `report`/`reports`, `video`/`videos`, `schemas`/`electrical`
+- Renamed `screenshots/schemas` to `screenshots/electrical`
+- Rewrote `README.md` and `README.fr.md` (Advanced scene, roadmap, accents, author name)
 
+### Removed
+
+- Stray `test.md` file
