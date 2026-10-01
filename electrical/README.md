@@ -1,11 +1,13 @@
-# Schemas
+# Electrical schematics
 
-This folder contains the electrical schematics of the project.
+Theoretical wiring diagram of the PLC (Siemens S7-1200, CPU 1214C DC/DC/DC) for the sorting line.
 
-## Contents
+## Planned contents
 
-- `electrical/`: PLC wiring diagram and power distribution
+- QElectroTech project file (`.qet`) and a PDF export
+- Power supply, safety circuit (emergency stop), digital inputs and outputs
+- Terminal and cable numbering aligned with [docs/en/io-mapping.md](../docs/en/io-mapping.md)
 
-## Tools
+## Status
 
-- QElectroTech or AutoCAD
+Planned. See [docs/en/milestone-plan.md](../docs/en/milestone-plan.md).

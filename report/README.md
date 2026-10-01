@@ -1,9 +1,20 @@
-# Report
+# Final report
 
-This folder contains the final PDF report and its assets.
+Mini report (PDF) summarizing the programming choices and the key performance indicators.
 
-## Contents
+## Planned content
 
-- Final technical report
-- KPI summary
-- Architecture and design decisions
+- Goals and scope
+- Architecture and I/O mapping
+- PLC program description
+- Test results
+- KPI: availability rate and hourly throughput
+- Lessons learned
+
+## Languages
+
+The English version is the reference. A French version is provided.
+
+## Status
+
+Planned.
