@@ -39,7 +39,7 @@ Design rules:
 | `OB1` Main | Calls the blocks below, in this order |
 | `FC9000` MHJ-PLC-Lab-Function-S71200 | Link with S7-PLCSIM, supplied with the Factory I/O template. Must stay first. |
 | `FB_ModeManager` | Auto and Manual selection, Start, Stop, emergency stop fault latch |
-| `FB_SortingLogic` | Sorting sequence (placeholder in this version) |
+| `FB_SortingLogic` | Sorting sequence, one box at a time (see sorting-sequence.md) |
 | `FC_Outputs` | Safety gating and writing of all `Q_` outputs, lamps, counter display |
 | `DB_Machine` | Machine status, actuator commands, counters |
 | `UDT_ActuatorCmd` | One bit per actuator command |
@@ -57,6 +57,31 @@ Design rules:
 For each actuator X: `Q_X = Enable AND ((Run AND AutoCmd.X) OR (ManualMode AND ManCmd.X))`
 
 Lamps: green and start light follow `Run`. Red and stop light follow NOT `Run`. Yellow is on when `Fault` or `ManualMode`. The reset light is on when `Fault` is latched and the emergency stop is released.
+
+
+## FB_SortingLogic interface
+
+| Direction | Name | Type | Role |
+| --- | --- | --- | --- |
+| Input | `i_Run` | Bool | Machine running in Auto |
+| Input | `i_StopPending` | Bool | Stop requested, no new cycle may start |
+| Input | `i_ClearCounters` | Bool | Zero the counters |
+| Input | `i_ExitIdleHigh` | Bool | TRUE if the exit sensors are TRUE with no box |
+| Input | `i_AtEntry`, `i_AtLoadPosition`, `i_AtTurntableEntry`, `i_AtUnloadPosition`, `i_HighBox` | Bool | Entry, turntable and light curtain sensors |
+| Input | `i_AtLeftEntry`, `i_AtRightEntry`, `i_AtLeftExit`, `i_AtRightExit` | Bool | Exit conveyor sensors |
+| Output | `o_CycleIdle` | Bool | No cycle in progress, no box in transit |
+| Output | `o_Step` | Int | Current step, for monitoring |
+| InOut | `io_Cmd` | `UDT_ActuatorCmd` | Automatic actuator commands |
+| InOut | `io_CountLeft`, `io_CountRight`, `io_CountTotal` | Int | Counters |
+
+## DB_Machine additions
+
+| Name | Type | Role |
+| --- | --- | --- |
+| `SortStep` | Int | Current step of the sorting sequence |
+| `ClearCounters` | Bool | Set by OB1 when Reset is pressed in Manual mode |
+| `ExitIdleHigh` | Bool | Configuration, value measured in scene-behavior.md (E09, E10) |
+
 
 ## Known limitation
 

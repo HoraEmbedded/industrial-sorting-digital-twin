@@ -23,6 +23,7 @@ English is the reference language of this repository. French translations are li
 | [architecture.md](architecture.md) | High level architecture ||
 | [architecture-diagram.md](architecture-diagram.md) | Architecture diagram ||
 | [factory-io-scene.md](factory-io-scene.md) | Factory I/O scene configuration ||
+| [sorting-sequence.md](sorting-sequence.md) | Sorting sequence and Grafcet ||
 
 
 ## Environment and operation
