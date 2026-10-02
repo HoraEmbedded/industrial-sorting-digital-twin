@@ -14,13 +14,16 @@ English is the reference language of this repository. French translations are li
 
 ## Architecture and mapping
 
-| Document | Description |
-| --- | --- |
-| [architecture.md](architecture.md) | High level architecture |
-| [architecture-diagram.md](architecture-diagram.md) | Architecture diagram |
-| [plc-architecture.md](plc-architecture.md) | PLC program architecture and naming conventions |
-| [io-mapping.md](io-mapping.md) | I/O mapping between TIA Portal and Factory I/O (single source of truth) |
-| [factory-io-scene.md](factory-io-scene.md) | Factory I/O scene configuration |
+| Document | Description | Status |
+| :--- | :--- | :---: |
+| [io-mapping.md](docs/en/io-mapping.md) | Single source of truth for the link between Factory I/O and PLC addresses. | **Completed** |
+| [plc-architecture.md](docs/en/plc-architecture.md) | Controller details, signal polarities, block layouts, and gating rules. | **Completed** |
+| [plc-test-log.md](docs/en/plc-test-log.md) | Results of the 13 foundation, safety, and mode interlocking tests. | **Passed (100%)** |
+| [scene-behavior.md](docs/en/scene-behavior.md) | Documented manual experiments profiling the turntable and sensor array physics. | **Completed** |
+| [architecture.md](architecture.md) | High level architecture ||
+| [architecture-diagram.md](architecture-diagram.md) | Architecture diagram ||
+| [factory-io-scene.md](factory-io-scene.md) | Factory I/O scene configuration ||
+
 
 ## Environment and operation
 
