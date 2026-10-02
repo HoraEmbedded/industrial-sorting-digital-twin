@@ -15,6 +15,11 @@ Observations of the Factory I/O scene Sorting by Height (Advanced), recorded in 
 | E07 | Switch `ManCmd.RemoverLeft` and `ManCmd.RemoverRight` TRUE and FALSE | Effect on boxes at the end of each exit conveyor | When set to TRUE, the remover instantly despawns/deletes any box touching the end of the conveyor, clearing the exit lines. |
 | E08 | Set `DB_Machine.CountTotal` to 5 | Does the operator panel counter show 5? | Yes, the digital display unit on the operator panel updates immediately and shows the integer value 5. |
 
+| E09 | Niveaux au repos. Aucune caisse sur la ligne, plateau à sa position de départ. Lis dans WT_Manual la valeur de chacun des 12 capteurs. | Value of all 12 sensors at rest. | `I_atLoadPosition = TRUE`, `I_atLeftExit = TRUE`, `I_atRightExit = TRUE`. All other 9 sensors (`I_atBack`, `I_atEntry`, `I_atFront`, `I_atLeftEntry`, `I_atRightEntry`, `I_atTurntableEntry`, `I_atUnloadPosition`, `I_HighBox`, `I_LowBox`) are FALSE. |
+| E10 | Capteur de sortie avec une caisse. Mets ManCmd.RemoverLeft/Right à FALSE. Envoie une caisse à l'extrémité de chaque convoyeur. | Value of exit sensors when blocked by a box. | When a box is blocked at the end of the Left conveyor, `I_atLeftExit` switches to FALSE. When blocked at the Right conveyor, `I_atRightExit` switches to FALSE. Both return to TRUE once Removers are set back to TRUE. |
+| E11 | Émetteur. En mode Edit de Factory I/O, clique sur l'émetteur et note ses réglages de taille de caisse. | Configuration settings of the emitter component. | The emitter is set to generate "Box (S)" (Low Box) and "Box (L)" (High Box) in a random distribution. No pallets or other part types are selected. |
+
+
 ## Sensor roles (to complete)
 
 | Tag | Role confirmed |
