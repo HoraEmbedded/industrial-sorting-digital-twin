@@ -30,8 +30,13 @@ Each entry follows this template:
 ## Entries
 
 <!-- Add new entries at the top of this section, most recent first -->
+### 2026-10-02
+Symptom: compile warning "Inputs or outputs are used that do not exist in the configured hardware".
+Cause: the Factory I/O addresses (I0.0 to I2.2, Q0.0 to Q1.7, QD30) are outside the on-board I/O of the CPU.
+Resolution: expected with S7-PLCSIM co-simulation. The on-board I/O was moved to address 100 to avoid any overlap. Warning accepted.
+Status: to be confirmed by test T01.
 
-### 2026-01-01 - Main OB1 opened in SCL instead of LAD in TIA Portal
+### 2026-09-30 - Main OB1 opened in SCL instead of LAD in TIA Portal
 
 - Context: Mission 3, step 4, writing a minimal test program in OB1
 - Symptom: The Main [OB1] block opened as text code (SCL), the LAD toolbar with contacts was missing, and the "Bit logic operations" panel showed text entries instead of contact icons
