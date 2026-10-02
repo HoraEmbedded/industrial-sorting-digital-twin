@@ -28,17 +28,17 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Tool startup and shutdown checklist
 - Real software versions recorded
 - PLC program architecture document
-- Block structure in TIA Portal: OB1, FB_Mode_Manager, FB_Sorting_Logic, FC_IO_Mapping, DB_Global
+- Block structure in TIA Portal: OB1, FB_ModeManager, FB_SortingLogic, FC_Outputs, DB_Global
 - Full PLC tag table with symbolic names
 - Definitive I/O mapping between TIA Portal and Factory I/O
 - Naming conventions for tags, blocks and comments
-- FB_Mode_Manager implementation with safety, mode and start stop logic
+- FB_ModeManager implementation with safety, mode and start stop logic
 - Emergency stop with fault latching, cleared by the Reset button
 - Run stop latch with self holding circuit
 - Main conveyor motor command
 - Indicator lights logic
 - PLC test log with four functional tests
-- FB_Sorting_Logic implementation with detection, classification, pushers and counters
+- FB_SortingLogic implementation with detection, classification, pushers and counters
 - Rising edge detection on entry and evacuation sensors
 - SR latches for box classification and pusher commands
 - Alignment timer with configurable preset
@@ -47,6 +47,8 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Factory I/O Advanced scene configuration
 - Complete I/O mapping for the Advanced scene
 - Tag additions: Reset_Button, Reset_Light, Motor_Feeder, Light_Yellow, Turn_Command, Sensor_Left_Entry, Sensor_Load_Position, Sensor_Unload_Position
+- Scene behavior document, PLC architecture and naming conventions document
+- PDF printout of the rewritten PLC program
 
 ### Changed
 
@@ -61,7 +63,13 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Merged duplicate folders: `report`/`reports`, `video`/`videos`, `schemas`/`electrical`
 - Renamed `screenshots/schemas` to `screenshots/electrical`
 - Rewrote `README.md` and `README.fr.md` (Advanced scene, roadmap, accents, author name)
+- Rewrote the PLC program from scratch for the Advanced scene: tags mirror the Factory I/O names, new `FB_ModeManager`, `FC_Outputs`, `DB_Machine` and `UDT_ActuatorCmd`
+- Renamed `FB_Mode_Manager`, `FB_Sorting_Logic` and `FC_IO_Mapping` to `FB_ModeManager`, `FB_SortingLogic` and `FC_Outputs`
+- Moved the on-board DI/DQ addresses of the CPU to 100 to avoid overlap with Factory I/O
+- Stop now requests a stop at the end of the cycle, as in the functional specification
+- Rewrote the I/O mapping, PLC architecture and PLC test log documents
 
 ### Removed
 
 - Stray `test.md` file
+- Old blocks `FB_Mode_Manager`, `FB_Sorting_Logic`, `FC_IO_Mapping`, `DB_Global` and the old default tag table content

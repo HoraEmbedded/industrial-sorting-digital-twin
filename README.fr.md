@@ -66,7 +66,7 @@ Le jumeau numérique est la scène Factory I/O **Sorting by Height (Advanced)**.
 | Phase | Contenu | Statut |
 | --- | --- | --- |
 | 1 | Fondations : périmètre, architecture, audit du poste, table d'E/S | Terminé |
-| 2 | Sécurité et modes de l'automate (`FB_Mode_Manager`) | Terminé |
+| 2 | Sécurité et modes de l'automate (`FB_ModeManager`) | Terminé |
 | 3 | Nettoyage du dépôt et documentation bilingue | En cours |
 | 4 | Logique de tri pour la scène Advanced | Prévu |
 | 5 | Tests de co-simulation (S7-PLCSIM et Factory I/O) | Prévu |

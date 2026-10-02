@@ -30,6 +30,30 @@ Each entry follows this template:
 ## Entries
 
 <!-- Add new entries at the top of this section, most recent first -->
+### 2026-10-02 - Start button failing to latch Run due to temporary variable inversion
+
+- Context: Commissioning Mission 6 (Advanced sorting scene) inside the `FB_ModeManager` block in TIA Portal V18.
+- Symptom: The `"DB_Machine".Run` variable refused to pass to TRUE, and the green indicator never turned on, even when keeping the physical Start button fully pressed. All safety conditions (`Fault = FALSE`, `Stop = TRUE`, `EmergencyStop = TRUE`) were perfectly met.
+- Attempts:
+  1. Monitored the `WT_Mode` watch table to verify the physical input `I_Start` (%I1.3), which correctly changed from FALSE to TRUE when pressed.
+  2. Checked if the `StopPending` latch or static edge memories were blocking the execution, but they were properly cleared.
+  3. Inspected the internal logic of `FB_ModeManager` using the online monitoring glasses.
+- Root cause: Typo in the Network 3 assignment. The output coil of the Start button edge detection network was mistakenly assigned to the temporary variable `#t_ResetPulse` instead of `#t_StartPulse`. This caused the Start button to fire a reset pulse instead of a start pulse, leaving the Run SR latch with no input signal.
+- Solution: Double-clicked the coil in Network 3 of `FB_ModeManager` and changed the variable name to `#t_StartPulse`, then compiled and downloaded the software modification to PLCSIM.
+- Lesson learned: Always double-check temporary pulse variable names (`#t_...Pulse`) in edge detection networks, as a single typo can cause a command button to trigger an completely opposite action.
+
+
+### 2026-10-02 - Permanent blinking of variables and impossible reset due to I/O address conflict
+
+- Context: Commissioning Mission 6 (Advanced sorting scene) using TIA Portal V18, S7-PLCSIM, and Factory I/O.
+- Symptom: The `AutoMode` variable was rapidly blinking between TRUE and FALSE. The `Reset light` and the red/yellow indicators stayed permanently on. Pressing the `Start` or `Reset` buttons had no effect.
+- Attempts:
+  1. Switched the physical selector to Auto in the 3D scene, but variables kept oscillating and the safety fault could not be cleared.
+  2. Analyzed the Factory I/O driver page and noticed that the active sensors used the exact same address range (%I0.0 to %I1.5) as the CPU's default integrated inputs.
+- Root cause: Hardware address overlap. The default on-board digital inputs/outputs of the S7-1200 CPU occupied the process image area from byte 0 to 1. The virtual CPU forced these addresses to 0 (unwired) while Factory I/O forced them to 1, causing a conflict and a rapid signal oscillation at every PLC scan cycle.
+- Solution: Opened the CPU Device Configuration in TIA Portal, changed the integrated DI/DQ Start address from 0 to 100, chose "Do not change tags" to preserve the simulation mapping, performed a full hardware and software compilation, and downloaded the update to PLCSIM.
+- Lesson learned: Always shift the CPU's integrated physical E/S start addresses to a higher offset (e.g., 100) when working with Factory I/O to completely free up the low-byte process image for simulation data.
+
 ### 2026-10-02
 Symptom: compile warning "Inputs or outputs are used that do not exist in the configured hardware".
 Cause: the Factory I/O addresses (I0.0 to I2.2, Q0.0 to Q1.7, QD30) are outside the on-board I/O of the CPU.
