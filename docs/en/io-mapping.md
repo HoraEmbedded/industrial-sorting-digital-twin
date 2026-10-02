@@ -10,46 +10,46 @@ The on-board DI 14/DQ 10 of the CPU is moved to start address 100, so it never o
 
 | PLC tag | Factory I/O tag | Type | Address | Notes |
 | --- | --- | --- | --- | --- |
-| `I_atBack` | at back | Bool | %I2.1 | Role to confirm in scene-behavior.md |
-| `I_atEntry` | at entry | Bool | %I0.0 | Role to confirm |
-| `I_atFront` | At front | Bool | %I0.6 | Role to confirm |
-| `I_atLeftEntry` | At left entry | Bool | %I1.0 | Role to confirm |
-| `I_atLeftExit` | At left exit | Bool | %I1.2 | Role to confirm |
-| `I_atLoadPosition` | At load position | Bool | %I0.4 | Role to confirm |
-| `I_atRightEntry` | At right entry | Bool | %I0.7 | Role to confirm |
-| `I_atRightExit` | At right exit | Bool | %I1.1 | Role to confirm |
-| `I_atTurntableEntry` | At turntable entry | Bool | %I0.3 | Role to confirm |
-| `I_atUnloadPosition` | At unload position | Bool | %I0.5 | Role to confirm |
-| `I_Auto` | Auto | Bool | %I1.7 | Selector in Auto |
-| `I_Manual` | Manual | Bool | %I2.2 | Selector in Manual, TRUE at rest in the scene |
-| `I_EmergencyStop` | Emergency stop | Bool | %I1.6 | Normally closed, TRUE when healthy |
-| `I_HighBox` | High box | Bool | %I0.2 | Light curtain, high box |
-| `I_LowBox` | Low box | Bool | %I0.1 | Light curtain, low box |
-| `I_Reset` | Reset | Bool | %I1.4 | Normally open pushbutton |
-| `I_Start` | Start | Bool | %I1.3 | Normally open pushbutton |
-| `I_Stop` | Stop | Bool | %I1.5 | Normally closed, TRUE at rest |
+| `I_atBack` | at back | Bool | %I2.1 | Rear entrance conveyor sensor. Confirms a box has fully cleared the entry area. |
+| `I_atEntry` | at entry | Bool | %I0.0 | Photocenter at the very beginning of the line. Detects box emergence. |
+| `I_atFront` | At front | Bool | %I0.6 | Queue sensor right before the turntable. Prevents part collisions. |
+| `I_atLeftEntry` | At left entry | Bool | %I1.0 | Confirms the box has successfully transitioned onto the Left exit conveyor. |
+| `I_atLeftExit` | At left exit | Bool | %I1.2 | Normally Closed (NC). Drops to FALSE when a box reaches the left remover. |
+| `I_atLoadPosition` | At load position | Bool | %I0.4 | Limit switch. TRUE when turntable is at 0° (aligned with entry). |
+| `I_atRightEntry` | At right entry | Bool | %I0.7 | Confirms the box has successfully transitioned onto the Right exit conveyor. |
+| `I_atRightExit` | At right exit | Bool | %I1.1 | Normally Closed (NC). Drops to FALSE when a box reaches the right remover. |
+| `I_atTurntableEntry` | At turntable entry | Bool | %I0.3 | Center reflective sensor inside the turntable. Used for precise stopping. |
+| `I_atUnloadPosition` | At unload position | Bool | %I0.5 | Limit switch. TRUE when turntable has completed its 90° clockwise rotation. |
+| `I_Auto` | Auto | Bool | %I1.7 | Selector in Auto position. |
+| `I_Manual` | Manual | Bool | %I2.2 | Selector in Manual position. TRUE at rest in the default scene layout. |
+| `I_EmergencyStop` | Emergency stop | Bool | %I1.6 | Normally Closed (NC). TRUE when healthy, drops to FALSE when pressed. |
+| `I_HighBox` | High box | Bool | %I0.2 | Top light curtain beam. Active (TRUE) only alongside LowBox for high boxes. |
+| `I_LowBox` | Low box | Bool | %I0.1 | Bottom light curtain beam. Active (TRUE) for both low and high boxes. |
+| `I_Reset` | Reset | Bool | %I1.4 | Normally Open (NO) pushbutton. Clears safety fault latches. |
+| `I_Start` | Start | Bool | %I1.3 | Normally Open (NO) pushbutton. Triggers the cycle run latch. |
+| `I_Stop` | Stop | Bool | %I1.5 | Normally Closed (NC). TRUE at rest, drops to FALSE to request a cycle stop. |
 
 ## Outputs (PLC to Factory I/O actuators)
 
 | PLC tag | Factory I/O tag | Type | Address | Notes |
 | --- | --- | --- | --- | --- |
-| `Q_Counter` | Counter | DInt | %QD30 | Counter display on the operator panel |
-| `Q_Emit` | Emitter 1 (Emit) | Bool | %Q1.7 | Box emitter, behavior to confirm |
-| `Q_EntryConveyor` | Entry conveyor | Bool | %Q0.1 | |
-| `Q_FeederConveyor` | Feeder conveyor | Bool | %Q0.0 | |
-| `Q_GreenIndicator` | Green indicator | Bool | %Q0.7 | Tower light |
-| `Q_LeftConveyor` | Left conveyor | Bool | %Q0.5 | |
-| `Q_Load` | Load | Bool | %Q0.2 | Turntable, role to confirm |
-| `Q_RedIndicator` | Red indicator | Bool | %Q1.1 | Tower light |
-| `Q_RemoverLeft` | Remover left | Bool | %Q1.5 | Behavior to confirm |
-| `Q_RemoverRight` | Remover right | Bool | %Q1.6 | Behavior to confirm |
-| `Q_ResetLight` | Reset light | Bool | %Q1.3 | Lamp of the Reset pushbutton |
-| `Q_RightConveyor` | Right conveyor | Bool | %Q0.6 | |
-| `Q_StartLight` | Start light | Bool | %Q1.2 | Lamp of the Start pushbutton |
-| `Q_StopLight` | Stop light | Bool | %Q1.4 | Lamp of the Stop pushbutton |
-| `Q_Turn` | Turn | Bool | %Q0.4 | Turntable, role to confirm |
-| `Q_Unload` | Unload | Bool | %Q0.3 | Turntable, role to confirm |
-| `Q_YellowIndicator` | Yellow indicator | Bool | %Q1.0 | Tower light |
+| `Q_Counter` | Counter | DInt | %QD30 | Digital totalizer display unit located on the operator panel. |
+| `Q_Emit` | Emitter 1 (Emit) | Bool | %Q1.7 | Pulse triggers box generation. Continuous TRUE spawns boxes sequentially. |
+| `Q_EntryConveyor` | Entry conveyor | Bool | %Q0.1 | Drives the second section of the entry lane towards the turntable. |
+| `Q_FeederConveyor` | Feeder conveyor | Bool | %Q0.0 | Drives the first entry section right beneath the box emitter. |
+| `Q_GreenIndicator` | Green indicator | Bool | %Q0.7 | Stack light tower: Constant green indicates system is running active cycles. |
+| `Q_LeftConveyor` | Left conveyor | Bool | %Q0.5 | Drives the left clearance exit lane. |
+| `Q_Load` | Load | Bool | %Q0.2 | Runs internal turntable rollers forward to pull a box inside. |
+| `Q_RedIndicator` | Red indicator | Bool | %Q1.1 | Stack light tower: Constant red indicates system is idle/stopped. |
+| `Q_RemoverLeft` | Remover left | Bool | %Q1.5 | Active clearing device. Instantly deletes boxes at the left exit limit. |
+| `Q_RemoverRight` | Remover right | Bool | %Q1.6 | Active clearing device. Instantly deletes boxes at the right exit limit. |
+| `Q_ResetLight` | Reset light | Bool | %Q1.3 | Built-in blue/white lamp. Active when safety is tripped and waiting for Reset. |
+| `Q_RightConveyor` | Right conveyor | Bool | %Q0.6 | Drives the right clearance exit lane. |
+| `Q_StartLight` | Start light | Bool | %Q1.2 | Built-in green lamp inside the Start button. Follows the Run state. |
+| `Q_StopLight` | Stop light | Bool | %Q1.4 | Built-in red lamp inside the Stop button. Active when cycle is offline. |
+| `Q_Turn` | Turn | Bool | %Q0.4 | Swivels the turntable mechanism 90° clockwise. Returns home when FALSE. |
+| `Q_Unload` | Unload | Bool | %Q0.3 | Runs internal turntable rollers backward to eject a box out to the left lane. |
+| `Q_YellowIndicator` | Yellow indicator | Bool | %Q1.0 | Stack light tower: Active on safety Fault or when system is in Manual mode. |
 
 ## Tags not used by the PLC
 
