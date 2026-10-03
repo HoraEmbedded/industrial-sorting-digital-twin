@@ -73,6 +73,8 @@ Lamps: green and start light follow `Run`. Red and stop light follow NOT `Run`. 
 | Output | `o_Step` | Int | Current step, for monitoring |
 | InOut | `io_Cmd` | `UDT_ActuatorCmd` | Automatic actuator commands |
 | InOut | `io_CountLeft`, `io_CountRight`, `io_CountTotal` | Int | Counters |
+| Input | `i_AtFront` | Bool | Queue sensor in front of the turntable |
+| Input | `i_CenterTime` | Time | Centering delay after the box reaches the turntable center |
 
 ## DB_Machine additions
 
