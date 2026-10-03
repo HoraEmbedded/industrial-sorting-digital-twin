@@ -53,6 +53,8 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Sorting logic tests T14 to T25 and throughput measurement in the PLC test log
 - Scene experiments E09 to E11 (sensor idle levels, exit sensor polarity, emitter settings)
 - Screenshots of the sorting logic networks
+- Pipelined emission tests T26 to T29 and throughput comparison in the sorting sequence document
+- Boxes-in-transit counters per exit conveyor
 
 ### Changed
 
@@ -76,6 +78,11 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Extended `DB_Machine` with `SortStep`, `ClearCounters` and `ExitIdleHigh`
 - OB1 passes sensors and counters to `FB_SortingLogic`. Reset in Manual mode zeroes the counters
 - Project status in the READMEs: cleanup, sorting logic and co-simulation tests marked as done
+- The next box is emitted as soon as the previous one leaves the turntable (step 5 goes directly to step 1, step 6 removed)
+- Feeder and entry conveyors wait when a box is in front of a turntable that is not at home
+- Height and entry latches are cleared at step 1
+- Centering delay documented (`CenterTime`)
+- Harmonized sensor tag names (`I_At...`) between TIA Portal and the documentation
 
 ### Removed
 

@@ -31,6 +31,17 @@ Each entry follows this template:
 
 <!-- Add new entries at the top of this section, most recent first -->
 
+### 2026-10-03 - Memory leakage and initialization failure during continuous loop re-architecture
+
+- Context: Step 3.2 & 3.4 (Pipelined cycle transition mapping) inside `FB_SortingLogic` in TIA Portal V18.
+- Symptom: Upon implementing the direct transition from Step 5 to Step 1, the second box automatically inherited the height parameter of the first box and skipped the centering delay timer execution.
+- Attempts:
+  1. Kept the height latch and entry seen resets mapped to `EQ(s_Step, 0)`. Result: Failed instantly because Step 0 is completely bypassed during continuous pipelined execution loops, leaving old states active.
+- Root cause: Sequential bypass. By design, a pipelined loop skips the default idle state (Step 0) to maintain flow velocity. Any latch reset depending strictly on Step 0 becomes dead code, causing a permanent memory leak from cycle to cycle.
+- Solution: Shifted the `R1` (Reset) triggers for both the `height latch` and `Entry seen latch` networks to evaluate `EQ(s_Step, 1)`. This guarantees that memory blocks are forced to FALSE at the exact microsecond a new part emission is executed, isolating each part run.
+- Lesson learned: When eliminating idle steps to establish pipeline operations, relocate the sequence initialization commands to the new entry point of the loop (Step 1) rather than the standard idle state.
+
+
 ### 2026-10-03 - Sequence freezing at step 4 and random sorting during loop execution due to transient step behavior
 
 - Context: Step 3.5 (Infinite loop activation) of the sorting logic implementation inside `FB_SortingLogic` in TIA Portal V18 and Factory I/O.
