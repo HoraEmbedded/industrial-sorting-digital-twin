@@ -40,11 +40,21 @@ Run in Auto mode with `WT_Sorting` online, unless stated otherwise.
 | T24 | Mid-cycle | Switch the selector from Auto to Manual | `Run` FALSE, `SortStep` 0, all automatic commands FALSE. | Pass | 2026-10-03 |
 | T25 | Manual mode, counters not zero | Press Reset | `CountLeft`, `CountRight` and `CountTotal` are 0, and the panel counter shows 0. | Pass | 2026-10-03 |
 
+## Pipelined emission tests
+
+| ID | Condition | Action | Expected | Result | Date |
+| --- | --- | --- | --- | --- | --- |
+| T26 | Auto, line empty | Press Start and time 10 boxes | `CountTotal` = 10. Each box is emitted as the previous one leaves the turntable. No collision. Time lower than the 303 s baseline. | Pass | 2026-10-03 |
+| T27 | Auto, counters at 0 | Let 20 boxes complete | `CountTotal` = `CountLeft` + `CountRight` = number of boxes emitted. No box stuck on the table or on an exit conveyor. | Pass | 2026-10-03 |
+| T28 | Auto, one box on an exit conveyor and one on the entry conveyor | Press Stop | No new box is emitted. The box on the entry conveyor is sorted and counted. `Run` drops only when both in-transit counters are 0. | Pass | 2026-10-03 |
+| T29 | Auto, two boxes active | Press Emergency stop, release, Reset, clear the line in Manual | Both in-transit counters are 0, `SortStep` is 0, Auto restarts normally. | Pass | 2026-10-03 |
+
+
 ## Measurements
 
 | Measurement | Value |
 | --- | --- |
-| Time for 10 boxes in T17 (s) | 313.0 |
-| Throughput (boxes per hour) = 36000 / time | 115.0 |
-| Low boxes and High boxes seen in T17 | 6 Low / 4 High |
+| Time for 10 boxes in T17 (s) | 250 s |
+| Throughput (boxes per hour) = 36000 / time | 144 |
+| Low boxes and High boxes seen in T17 | 7 Low / 3 High |
 

@@ -85,3 +85,10 @@ Several boxes can be on the same exit conveyor. Each exit has a counter of boxes
 - Only one box between the emitter and the turntable at a time.
 - No watchdog timers: a missing sensor signal stalls the sequence at the current step.
 - `I_LowBox` and `I_AtBack` are mapped but not used by the logic.
+
+## Performance
+
+| Version | Time for 10 boxes (s) | Throughput (boxes per hour) |
+| --- | --- | --- |
+| One box at a time | 303 | 119 |
+| Pipelined emission | 250 | 144 |
