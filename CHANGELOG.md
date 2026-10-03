@@ -49,6 +49,10 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Tag additions: Reset_Button, Reset_Light, Motor_Feeder, Light_Yellow, Turn_Command, Sensor_Left_Entry, Sensor_Load_Position, Sensor_Unload_Position
 - Scene behavior document, PLC architecture and naming conventions document
 - PDF printout of the rewritten PLC program
+- Sorting sequence documentation with Grafcet (`docs/en/sorting-sequence.md`)
+- Sorting logic tests T14 to T25 and throughput measurement in the PLC test log
+- Scene experiments E09 to E11 (sensor idle levels, exit sensor polarity, emitter settings)
+- Screenshots of the sorting logic networks
 
 ### Changed
 
@@ -68,6 +72,10 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Moved the on-board DI/DQ addresses of the CPU to 100 to avoid overlap with Factory I/O
 - Stop now requests a stop at the end of the cycle, as in the functional specification
 - Rewrote the I/O mapping, PLC architecture and PLC test log documents
+- Implemented `FB_SortingLogic`: Grafcet with 7 steps, height classification, turntable control, exit counting, stop at the end of the cycle
+- Extended `DB_Machine` with `SortStep`, `ClearCounters` and `ExitIdleHigh`
+- OB1 passes sensors and counters to `FB_SortingLogic`. Reset in Manual mode zeroes the counters
+- Project status in the READMEs: cleanup, sorting logic and co-simulation tests marked as done
 
 ### Removed
 

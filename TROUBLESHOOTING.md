@@ -30,6 +30,33 @@ Each entry follows this template:
 ## Entries
 
 <!-- Add new entries at the top of this section, most recent first -->
+
+### 2026-10-03 - Sequence freezing at step 4 and random sorting during loop execution due to transient step behavior
+
+- Context: Step 3.5 (Infinite loop activation) of the sorting logic implementation inside `FB_SortingLogic` in TIA Portal V18 and Factory I/O.
+- Symptom: The first box was sorted perfectly, but the sequence then froze at `SortStep = 4`. The turntable remained rotated at 90°, and the main entry conveyor stopped. When attempting to force the continuous loop, the system started dispatching both low and high boxes completely at random to either side.
+- Attempts:
+  1. Implemented a parallel reset branch using `EQ(s_Step, 6)` on the `R1` input of the height and entry latches. Result: The infinite loop started running, but the sorting became completely random because the high-speed loop cleared the height memory `#s_SeenHigh` while the box was still being discharged at Step 4, causing the rollers to stop or misread the box type.
+  2. Reverted the reset condition strictly to `EQ(s_Step, 0)` to preserve memory through the discharge phase. Result: The system fell back to the initial symptom where the second box stopped dead right before the turntable because Step 0 was skipped too fast for the latches to register the reset command.
+- Root cause: A classic PLC race condition involving microsecond transient steps. Because TIA Portal processes code sequentially from top to bottom, the transition from Step 6 to 0 and immediately from Step 0 to 1 occurred within a single PLC scan cycle. The upper networks never "saw" `s_Step` equal to 0, leaving the entry latch permanently stuck at TRUE. This forced the filtering timer to expire instantly on the second box, while the late reset at Step 6 cut the actuator power mid-discharge.
+- Solution: Restructured the reset logic for the memory blocks. Configured the `R1` input of `#s_SeenHigh` (Height latch) to clear on `EQ(s_Step, 0) OR EQ(s_Step, 1)` to ensure it wipes clean the moment a new cycle generates a box. Modified the transition network T0 to 1 (Network 13) by adding a Normally Closed contact `NOT s_AtEntrySeen` in series, mathematically forcing the state machine to remain at Step 0 for at least one full scan cycle until the background latches safely clear out.
+- Lesson learned: Never assume a transient step (like Step 0 in a loop) stays active long enough to clear latches in upper networks. Interlock the transition leaving that step with a Normally Closed contact of the latch itself to guarantee the PLC scan cycle has safely processed the memory reset before advancing.
+
+
+### 2026-10-03 - Turntable premature rotation and box blocking due to hardware-space mismatch and memory conflicts
+
+- Context: Step 3.5 (First automatic trial) of the sorting logic implementation inside `FB_SortingLogic` in TIA Portal V18 and Factory I/O.
+- Symptom: The system kept skipping steps immediately. The turntable rotated to 90° completely empty before the box could even reach it. The box ended up permanently blocked right before the plateau flanc, the main conveyor stopped, and exit lines ran indefinitely in the air while the sequence stood frozen at Step 4.
+- Attempts:
+  1. Checked initial sensor values at rest to find a potential polarity inversion, but all physical levels were clean and coherent.
+  2. Suspected a premature trigger from the edge of the box on `I_atTurntableEntry` and added a standard `TON` timer directly in the transition network (Network 11). Result: The box completely overshot the plateau and fell off into the void because the timer instanced memory `#s_TonEmit` was shared with the emitter network, causing critical data overwriting.
+  3. Switched the timer to a dedicated multi-instance variable `#s_TonCenter` and added a Normally Open contact on the actuator command (`Q_Load`) to cut the power on sensor detection. Result: The box stopped dead before even hitting the plateau because a Normally Open contact was used instead of a Normally Closed one.
+  4. Implemented a specific sequence latch (`s_AtEntrySeen`) and separated the logic into distinct networks, but the sequence still jumped to Step 4 at startup because the calculation networks were inserted right in the middle of the sequential décroissant transition block, breaking the execution scanning order.
+- Root cause: Multiple combined factors. First, a space-vs-time architectural error: `I_atTurntableEntry` is a fixed sensor at the edge of the entry line, not a centering sensor on the plateau, making direct transition mapping impossible without a shift delay. Second, severe memory collisions occurred due to an instance-sharing typo on the standard timer (`#s_TonEmit`). Finally, placing the auxiliary latch and timer networks inside the sequential T6-to-T0 transition block forced TIA Portal to cascade `MOVE` operations within a single PLC program scan cycle.
+- Solution: Created a clean independent `IEC_TIMER` static variable (`s_TonCenter`) linked to a runtime parameter `i_CenterTime` (set to `T#2s`). Re-architectured the block networks by moving the "Entry seen latch" and "Center timer" networks cleanly above the transition stack (right after Network 6). Rewrote Network 11 to evaluate `s_TonCenter.Q`, and corrected the `Q_Load` command network to use a proper Normally Closed interlock on the center sensor.
+- Lesson learned: Never share instance data blocks or timers across separate networks. Sequential transitions in LAD-coded Grafcets must remain perfectly continuous from T6 to T0; any auxiliary latch or filtering timer must be computed *before* evaluating the state machine transitions to prevent microsecond step-skipping.
+
+
 ### 2026-10-02 - Start button failing to latch Run due to temporary variable inversion
 
 - Context: Commissioning Mission 6 (Advanced sorting scene) inside the `FB_ModeManager` block in TIA Portal V18.

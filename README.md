@@ -67,9 +67,9 @@ The digital twin is the Factory I/O scene **Sorting by Height (Advanced)**. Boxe
 | --- | --- | --- |
 | 1 | Foundation: scope, architecture, environment audit, I/O mapping | Done |
 | 2 | PLC safety and modes (`FB_ModeManager`) | Done |
-| 3 | Repository cleanup and bilingual documentation | In progress |
-| 4 | Sorting logic for the Advanced scene | Planned |
-| 5 | Co-simulation tests (S7-PLCSIM and Factory I/O) | Planned |
+| 3 | Repository cleanup and bilingual documentation | done |
+| 4 | Sorting logic for the Advanced scene | Done |
+| 5 | Co-simulation tests (S7-PLCSIM and Factory I/O) | Done|
 | 6 | Electrical schematic | Planned |
 | 7 | KPI, demo video and screenshots | Planned |
 | 8 | Final report and release v1.0 | Planned |
