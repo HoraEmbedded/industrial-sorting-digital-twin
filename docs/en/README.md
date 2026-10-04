@@ -24,7 +24,7 @@ English is the reference language of this repository. French translations are li
 | [architecture-diagram.md](architecture-diagram.md) | Architecture diagram ||
 | [factory-io-scene.md](factory-io-scene.md) | Factory I/O scene configuration ||
 | [sorting-sequence.md](sorting-sequence.md) | Sorting sequence and Grafcet ||
-
+| [electrical-design.md](electrical-design.md) | Electrical design basis for the wiring schematic ||
 
 ## Environment and operation
 

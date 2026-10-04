@@ -55,6 +55,11 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Screenshots of the sorting logic networks
 - Pipelined emission tests T26 to T29 and throughput comparison in the sorting sequence document
 - Boxes-in-transit counters per exit conveyor
+- Electrical design basis (`docs/en/electrical-design.md`): devices, I/O assignment, 24 V budget, safety concept
+- QElectroTech project with the motor circuit sheets and its PDF export
+- Python generator for the PLC wiring sheets (`scripts/generate_wiring.py`) with SVG output and a PDF
+- Script `scripts/clean-dashes.ps1` for generated files
+
 
 ### Changed
 
@@ -82,7 +87,7 @@ The format is based on Keep a Changelog and this project adheres to Semantic Ver
 - Feeder and entry conveyors wait when a box is in front of a turntable that is not at home
 - Height and entry latches are cleared at step 1
 - Centering delay documented (`CenterTime`)
-- Harmonized sensor tag names (`I_At...`) between TIA Portal and the documentation
+- Project status in the READMEs: electrical schematic marked as done
 
 ### Removed
 
