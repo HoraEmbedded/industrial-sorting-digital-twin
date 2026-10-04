@@ -1,0 +1,87 @@
+<project title="industrial-sorting-line" version="0.100.0">
+    <properties>
+        <property name="author" show="1">HoraEmbedded</property>
+        <property name="installation" show="1">Sorting line</property>
+        <property name="localisation" show="1">Control cabinet</property>
+        <property name="saveddate" show="1">10/4/2026</property>
+        <property name="saveddate-eu" show="1">04-10-2026</property>
+        <property name="saveddate-us" show="1">2026-10-04</property>
+        <property name="savedfilename" show="1">industrial-sorting-line</property>
+        <property name="savedfilepath" show="1">C:/Users/ENVY/Documents/industrial-sorting-digital-twin/electrical/industrial-sorting-line.qet</property>
+        <property name="savedtime" show="1">00:47</property>
+        <property name="title" show="1">Industrial Sorting Line, control cabinet</property>
+    </properties>
+    <newdiagrams>
+        <border cols="17" colsize="60" rows="8" displaycols="true" displayrows="true" rowsize="80"/>
+        <inset date="null" title="Cover and drawing index" auto_page_num="Create an auto folio numbering" displayAt="bottom" filename="" author="HoraEmbedded" plant="" locmach="" indexrev="" folio="%id/%total" version=""/>
+        <conductors num="_" conductor_color="" type="multi" displaytext="1" onetextperfolio="0" vertirotatetext="270" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+        <report label="%f-%l%c"/>
+        <xrefs>
+            <xref type="protection" displayhas="cross" offset="0" slave_label="(%f-%l%c)" showpowerctc="true" delayprefix="" switchprefix="" powerprefix="" snapto="label" xrefpos="" master_label="%f-%l%c"/>
+            <xref type="coil" displayhas="cross" offset="40" slave_label="(%f-%l%c)" showpowerctc="true" delayprefix="" switchprefix="" powerprefix="" snapto="label" xrefpos="AlignTop" master_label="%f-%l%c"/>
+            <xref type="commutator" displayhas="cross" offset="0" slave_label="(%f-%l%c)" showpowerctc="true" delayprefix="" switchprefix="" powerprefix="" snapto="label" xrefpos="" master_label="%f-%l%c"/>
+        </xrefs>
+        <conductors_autonums freeze_new_conductors="false" current_autonum=""/>
+        <folio_autonums/>
+        <element_autonums freeze_new_elements="false" current_autonum=""/>
+    </newdiagrams>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="Cover and drawing index" rows="8" rowsize="80" height="660" filename="" order="1" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <properties>
+            <property name="title" show="1">Cover and drawing index</property>
+        </properties>
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="Main supply and motor starters M1 to M4" rows="8" rowsize="80" height="660" filename="" order="2" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="Turntable roller motor M5 (reversing)" rows="8" rowsize="80" height="660" filename="" order="3" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="Control supply 24 V DC and emergency stop" rows="8" rowsize="80" height="660" filename="" order="4" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="PLC supply and operator panel inputs" rows="8" rowsize="80" height="660" filename="" order="5" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="PLC inputs: sensors" rows="8" rowsize="80" height="660" filename="" order="6" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="PLC outputs: contactors and valves" rows="8" rowsize="80" height="660" filename="" order="7" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="PLC outputs: indicator lamps and expansion modules" rows="8" rowsize="80" height="660" filename="" order="8" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <diagram colsize="60" indexrev="" displaycols="true" plant="" locmach="" title="Device list" rows="8" rowsize="80" height="660" filename="" order="9" date="null" author="HoraEmbedded" version="0.100.0" freezeNewConductor="false" cols="17" displayAt="bottom" auto_page_num="Create an auto folio numbering" folio="%id/%total" displayrows="true" freezeNewElement="false">
+        <defaultconductor num="_" conductor_color="" type="multi" displaytext="1" vertirotatetext="270" onetextperfolio="0" color2="#000000" horizrotatetext="0" bicolor="false" condsize="1" numsize="7" tension_protocol="" bus="" dash-size="2" conductor_section="" vertical-alignment="AlignRight" function="" horizontal-alignment="AlignBottom" text_color="#000000" cable="" formula=""/>
+    </diagram>
+    <collection>
+        <category name="import">
+            <names>
+                <name lang="ca">Elements importats</name>
+                <name lang="cs">Zavedené prvky</name>
+                <name lang="da">Importerede elementer</name>
+                <name lang="de">Importierte Elemente</name>
+                <name lang="el">Εισηγμένα στοιχεία</name>
+                <name lang="en">Imported elements</name>
+                <name lang="es">Elementos importados</name>
+                <name lang="fr">Éléments importés</name>
+                <name lang="hr">Uvezeni elementi</name>
+                <name lang="it">Elementi importati</name>
+                <name lang="ja">インバートされた要素</name>
+                <name lang="nl">Elementen geïmporteerd</name>
+                <name lang="nl_BE">Elementen geïmporteerd</name>
+                <name lang="pl">Elementy importowane</name>
+                <name lang="pt">Elementos importados</name>
+                <name lang="pt_BR">Elementos importados</name>
+                <name lang="ro">Elemente importate</name>
+                <name lang="ru">Импортированные элементы</name>
+                <name lang="sl">Uvoženi elementi</name>
+                <name lang="sv">Importerade element</name>
+                <name lang="tr">İthal öğeler</name>
+                <name lang="uk">Імпортовані елементи</name>
+                <name lang="zh">导入元件</name>
+            </names>
+        </category>
+    </collection>
+</project>
