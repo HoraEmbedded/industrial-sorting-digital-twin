@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1070" width="1400" height="1070">
+<rect width="1400" height="1070" fill="#ffffff"/>
+<rect x="900" y="115" width="260" height="572" fill="#f3f6fb" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="1030.0" y="105" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">-A1 CPU 1214C DC/DC/DC, digital inputs</text>
+<line x1="70" y1="150" x2="70" y2="566" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="70" y="130" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#b3261e" font-weight="normal">+24V</text>
+<line x1="70" y1="150" x2="120" y2="150" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="150" r="3.5" fill="#b3261e"/>
+<rect x="120" y="138" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="155" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-S0  Emergency stop, contact 2 (NC)</text>
+<line x1="460" y1="150" x2="900" y2="150" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="145" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_EmergencyStop</text>
+<circle cx="900" cy="150" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="154" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.0</text>
+<line x1="70" y1="182" x2="120" y2="182" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="182" r="3.5" fill="#b3261e"/>
+<rect x="120" y="170" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="187" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-S2  Stop pushbutton (NC)</text>
+<line x1="460" y1="182" x2="900" y2="182" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="177" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_Stop</text>
+<circle cx="900" cy="182" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="186" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.1</text>
+<line x1="70" y1="214" x2="120" y2="214" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="214" r="3.5" fill="#b3261e"/>
+<rect x="120" y="202" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="219" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-S1  Start pushbutton (NO)</text>
+<line x1="460" y1="214" x2="900" y2="214" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="209" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_Start</text>
+<circle cx="900" cy="214" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="218" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.2</text>
+<line x1="70" y1="246" x2="120" y2="246" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="246" r="3.5" fill="#b3261e"/>
+<rect x="120" y="234" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="251" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-S3  Reset pushbutton (NO)</text>
+<line x1="460" y1="246" x2="900" y2="246" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="241" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_Reset</text>
+<circle cx="900" cy="246" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="250" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.3</text>
+<line x1="70" y1="278" x2="120" y2="278" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="278" r="3.5" fill="#b3261e"/>
+<rect x="120" y="266" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="283" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-S4  Selector, Auto contact</text>
+<line x1="460" y1="278" x2="900" y2="278" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="273" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_Auto</text>
+<circle cx="900" cy="278" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="282" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.4</text>
+<line x1="70" y1="310" x2="120" y2="310" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="310" r="3.5" fill="#b3261e"/>
+<rect x="120" y="298" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="315" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-S4  Selector, Manual contact</text>
+<line x1="460" y1="310" x2="900" y2="310" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="305" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_Manual</text>
+<circle cx="900" cy="310" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="314" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.5</text>
+<line x1="70" y1="342" x2="120" y2="342" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="342" r="3.5" fill="#b3261e"/>
+<rect x="120" y="330" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="347" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B2  Sensor at entry</text>
+<line x1="460" y1="342" x2="900" y2="342" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="337" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtEntry</text>
+<circle cx="900" cy="342" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="346" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.6</text>
+<line x1="70" y1="374" x2="120" y2="374" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="374" r="3.5" fill="#b3261e"/>
+<rect x="120" y="362" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="379" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B3  Sensor at front</text>
+<line x1="460" y1="374" x2="900" y2="374" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="369" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtFront</text>
+<circle cx="900" cy="374" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="378" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I0.7</text>
+<line x1="70" y1="406" x2="120" y2="406" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="406" r="3.5" fill="#b3261e"/>
+<rect x="120" y="394" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="411" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B4  Sensor at turntable entry</text>
+<line x1="460" y1="406" x2="900" y2="406" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="401" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtTurntableEntry</text>
+<circle cx="900" cy="406" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="410" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I1.0</text>
+<line x1="70" y1="438" x2="120" y2="438" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="438" r="3.5" fill="#b3261e"/>
+<rect x="120" y="426" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="443" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B5  Sensor at load position</text>
+<line x1="460" y1="438" x2="900" y2="438" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="433" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtLoadPosition</text>
+<circle cx="900" cy="438" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="442" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I1.1</text>
+<line x1="70" y1="470" x2="120" y2="470" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="470" r="3.5" fill="#b3261e"/>
+<rect x="120" y="458" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="475" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B6  Sensor at unload position</text>
+<line x1="460" y1="470" x2="900" y2="470" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="465" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtUnloadPosition</text>
+<circle cx="900" cy="470" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="474" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I1.2</text>
+<line x1="70" y1="502" x2="120" y2="502" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="502" r="3.5" fill="#b3261e"/>
+<rect x="120" y="490" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="507" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B7  Sensor at left entry</text>
+<line x1="460" y1="502" x2="900" y2="502" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="497" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtLeftEntry</text>
+<circle cx="900" cy="502" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="506" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I1.3</text>
+<line x1="70" y1="534" x2="120" y2="534" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="534" r="3.5" fill="#b3261e"/>
+<rect x="120" y="522" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="539" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B9  Sensor at right entry</text>
+<line x1="460" y1="534" x2="900" y2="534" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="529" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtRightEntry</text>
+<circle cx="900" cy="534" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="538" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I1.4</text>
+<line x1="70" y1="566" x2="120" y2="566" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="566" r="3.5" fill="#b3261e"/>
+<rect x="120" y="554" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="571" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B1  Sensor at back</text>
+<line x1="460" y1="566" x2="900" y2="566" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="561" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtBack</text>
+<circle cx="900" cy="566" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="570" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">I1.5</text>
+<circle cx="900" cy="598" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="602" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">L+</text>
+<line x1="820" y1="598" x2="900" y2="598" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="810" y="602" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="end" fill="#b3261e" font-weight="normal">+24V</text>
+<circle cx="900" cy="630" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="634" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">M</text>
+<line x1="820" y1="630" x2="900" y2="630" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="810" y="634" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="end" fill="#b3261e" font-weight="normal">0V</text>
+<circle cx="900" cy="662" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="666" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">1M</text>
+<line x1="820" y1="662" x2="900" y2="662" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="810" y="666" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="end" fill="#b3261e" font-weight="normal">0V</text>
+<rect x="900" y="732" width="260" height="188" fill="#f3f6fb" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="1030.0" y="722" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="middle" fill="#1a1a1a" font-weight="bold">-A2 SM 1221 DI 8 x 24 V DC, channels 0 to 3</text>
+<line x1="70" y1="767" x2="70" y2="863" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="70" y="747" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#b3261e" font-weight="normal">+24V</text>
+<line x1="70" y1="767" x2="120" y2="767" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="767" r="3.5" fill="#b3261e"/>
+<rect x="120" y="755" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="772" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B8  Sensor at left exit</text>
+<line x1="460" y1="767" x2="900" y2="767" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="762" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtLeftExit</text>
+<circle cx="900" cy="767" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="771" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">DI 0</text>
+<line x1="70" y1="799" x2="120" y2="799" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="799" r="3.5" fill="#b3261e"/>
+<rect x="120" y="787" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="804" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B10  Sensor at right exit</text>
+<line x1="460" y1="799" x2="900" y2="799" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="794" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_AtRightExit</text>
+<circle cx="900" cy="799" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="803" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">DI 1</text>
+<line x1="70" y1="831" x2="120" y2="831" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="831" r="3.5" fill="#b3261e"/>
+<rect x="120" y="819" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="836" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B11  Light curtain, high output</text>
+<line x1="460" y1="831" x2="900" y2="831" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="826" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_HighBox</text>
+<circle cx="900" cy="831" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="835" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">DI 2</text>
+<line x1="70" y1="863" x2="120" y2="863" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="70" cy="863" r="3.5" fill="#b3261e"/>
+<rect x="120" y="851" width="340" height="24" fill="#ffffff" stroke="#1a1a1a" stroke-width="1.6"/>
+<text x="128" y="868" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">-B11  Light curtain, low output</text>
+<line x1="460" y1="863" x2="900" y2="863" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round"/>
+<text x="680.0" y="858" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="middle" fill="#1f4e9e" font-weight="normal">I_LowBox</text>
+<circle cx="900" cy="863" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="867" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">DI 3</text>
+<circle cx="900" cy="895" r="3.5" fill="#1a1a1a"/>
+<text x="912" y="899" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">1M</text>
+<line x1="820" y1="895" x2="900" y2="895" stroke="#b3261e" stroke-width="1.6" stroke-linecap="round"/>
+<text x="810" y="899" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="end" fill="#b3261e" font-weight="normal">0V</text>
+<text x="40" y="960" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="start" fill="#1a1a1a" font-weight="normal">Sensors -B1 to -B11: PNP, three-wire (brown +24V, blue 0V, black signal). Only the +24V and signal wires are drawn.</text>
+<text x="40" y="980" font-family="Consolas, 'Courier New', monospace" font-size="12" text-anchor="start" fill="#1a1a1a" font-weight="normal">PLC terminal names (L+, M, 1M) must be checked against the Siemens S7-1200 System Manual. Spare channels are not drawn.</text>
+<rect x="10" y="10" width="1380" height="1050" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+<text x="40" y="50" font-family="Consolas, 'Courier New', monospace" font-size="20" text-anchor="start" fill="#1a1a1a" font-weight="bold">Sheet 4: PLC inputs</text>
+<line x1="10" y1="1000" x2="1390" y2="1000" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/>
+<line x1="560" y1="1000" x2="560" y2="1060" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+<line x1="1000" y1="1000" x2="1000" y2="1060" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+<line x1="1200" y1="1000" x2="1200" y2="1060" stroke="#1a1a1a" stroke-width="1" stroke-linecap="round"/>
+<text x="25" y="1027" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">Industrial Sorting Line, control cabinet</text>
+<text x="25" y="1048" font-family="Consolas, 'Courier New', monospace" font-size="11" text-anchor="start" fill="#555555" font-weight="normal">Theoretical design, not built, not certified</text>
+<text x="575" y="1038" font-family="Consolas, 'Courier New', monospace" font-size="14" text-anchor="start" fill="#1a1a1a" font-weight="bold">PLC inputs</text>
+<text x="1015" y="1027" font-family="Consolas, 'Courier New', monospace" font-size="13" text-anchor="start" fill="#1a1a1a" font-weight="normal">HoraEmbedded</text>
+<text x="1015" y="1048" font-family="Consolas, 'Courier New', monospace" font-size="11" text-anchor="start" fill="#555555" font-weight="normal">2026-10-04</text>
+<text x="1215" y="1038" font-family="Consolas, 'Courier New', monospace" font-size="14" text-anchor="start" fill="#1a1a1a" font-weight="bold">Sheet 4 of 5</text>
+</svg>
