@@ -2,7 +2,7 @@
 
 Digital twin and PLC control of an industrial sorting line, built with Siemens TIA Portal, S7-PLCSIM and Factory I/O.
 
-![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Status](https://img.shields.io/badge/status-completed-green)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![PLC](https://img.shields.io/badge/PLC-Siemens%20S7--1200-blue)
 ![Twin](https://img.shields.io/badge/twin-Factory%20I%2FO-green)
@@ -71,8 +71,8 @@ The digital twin is the Factory I/O scene **Sorting by Height (Advanced)**. Boxe
 | 4 | Sorting logic for the Advanced scene | Done |
 | 5 | Co-simulation tests (S7-PLCSIM and Factory I/O) | Done|
 | 6 | Electrical schematic | Done |
-| 7 | KPI, demo video and screenshots | Planned |
-| 8 | Final report and release v1.0 | Planned |
+| 7 | KPI, demo video and screenshots | Done(KPIs in perspective) |
+| 8 | Final report and release v1.0 | Done |
 
 ## Getting started
 
