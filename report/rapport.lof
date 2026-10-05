@@ -8,16 +8,16 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Operator panel of the scene.}}{5}{figure.caption.14}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Co-simulation architecture.}}{6}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Data flow between the blocks of the program.}}{8}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Fault latch, stop request and run latch in \texttt {FB\_ModeManager}.}}{10}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Data flow between the blocks of the program.}}{9}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Fault latch, stop request and run latch in \texttt {FB\_ModeManager}.}}{11}{figure.caption.23}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces GRAFCET of the sorting sequence.}}{12}{figure.caption.25}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Transition networks of \texttt {FB\_SortingLogic}.}}{14}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Actuator command networks of \texttt {FB\_SortingLogic} (two parts).}}{14}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces GRAFCET of the sorting sequence.}}{13}{figure.caption.25}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Transition networks of \texttt {FB\_SortingLogic}.}}{15}{figure.caption.28}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Actuator command networks of \texttt {FB\_SortingLogic} (two parts).}}{15}{figure.caption.29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Watch table during a sorting cycle (two parts).}}{20}{figure.caption.36}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Box on the turntable during a sorting cycle.}}{20}{figure.caption.37}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Organization of the GitHub repository.}}{21}{figure.caption.39}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Watch table during a sorting cycle (two parts).}}{21}{figure.caption.36}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Box on the turntable during a sorting cycle.}}{21}{figure.caption.37}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Organization of the GitHub repository.}}{24}{figure.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

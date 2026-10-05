@@ -310,7 +310,7 @@ The line sorts boxes of two heights with a light curtain and a turntable. Eight 
 This chapter describes the structure of the PLC program, the management of the operating modes and of the safety functions, and the writing of the outputs. The sorting sequence itself is detailed in chapter~\ref{ch:sorting}.
 
 \section{Program structure}
-The program is made of five code blocks and two data structures (Table~\ref{tab:blocks}). OB1 calls the blocks in a fixed order, shown in Figure~\ref{fig:dataflow}: the link function FC9000, the mode manager, a small network that requests the clearing of the counters when Reset is pressed in Manual mode, the sorting logic, and finally the output function.
+The program is made of six code blocks and two data structures (Table~\ref{tab:blocks}). OB1 calls the blocks in a fixed order, shown in Figure~\ref{fig:dataflow}: the link function FC9000, the mode manager, a small network that requests the clearing of the counters when Reset is pressed in Manual mode, the sorting logic, and finally the output function.
 
 \begin{table}[H]
 \centering\small
@@ -326,6 +326,7 @@ The program is made of five code blocks and two data structures (Table~\ref{tab:
 \tg{FC_Outputs} & Single writer of all outputs, with safety gating, lamps and counter display\\
 \tg{DB_Machine} & Machine state, actuator commands for Auto and Manual, counters\\
 \tg{UDT_ActuatorCmd} & One command bit per actuator\\
+\tg{FB\_Kpi} & Availability, throughput and average cycle time computed in the PLC from run-time and Auto-mode counters\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -341,9 +342,15 @@ The program is made of five code blocks and two data structures (Table~\ref{tab:
 \node[io]  (inp) at (0,0)       {Inputs\\(\texttt{I\_} tags)};
 \node[box] (mm)  at (4.0,1.6)   {\texttt{FB\_ModeManager}};
 \node[box] (sl)  at (4.0,-1.6)  {\texttt{FB\_SortingLogic}};
+
+\node[box] (kpi) at (4.0,-4.2)  {\texttt{FB\_Kpi}};
+\draw[arr] (inp) -- (kpi);
+
+
 \node[box] (db)  at (8.2,0)     {\texttt{DB\_Machine}};
 \node[box] (fc)  at (11.8,0)    {\texttt{FC\_Outputs}};
 \node[io]  (out) at (11.8,-2.6) {Outputs\\(\texttt{Q\_} tags)};
+\draw[arr] (kpi) -- node[lab] {KPI variables} (db);
 \draw[arr] (inp) -- (mm);
 \draw[arr] (inp) -- (sl);
 \draw[arr] (mm) -- node[lab] {modes, \texttt{Run}, \texttt{Fault}} (db);
@@ -708,6 +715,55 @@ Pipelined emission reduces the time per box by 17.5\,\% and increases the throug
 
 \figplace[width=0.8\linewidth]{factory-io-sorting.png}{fiosort}{Box on the turntable during a sorting cycle.}{In Factory I/O, a box on the turntable while it rotates, with the exit conveyors or the operator panel visible.}
 
+% =====================================================================
+\section{Embedded performance indicators}\label{sec:kpi}
+The throughput of Table~\ref{tab:perf} was measured by hand, with a stopwatch. That method cannot run during production, and it gives one number per measurement campaign instead of a continuous value. The function block \tg{FB_Kpi} computes the same indicators inside the controller, from the machine state that \tg{FB_ModeManager} and \tg{FB_SortingLogic} already maintain. No new sensor is required, and the computation runs every scan.
+
+\subsection{Interface}
+Table~\ref{tab:fbkpi} lists the parameters of \tg{FB_Kpi}. It is written in SCL and called in \tg{OB1} after \tg{FB_SortingLogic}. The two inputs \tg{i_AutoMode} and \tg{i_Run} come from \tg{DB_Machine}, and \tg{i_CountTotal} is the counter already used for the display of the operator panel.
+
+\begin{table}[H]
+	\centering\small
+	\caption{Interface of \texttt{FB\_Kpi}.}\label{tab:fbkpi}
+	\begin{tabularx}{\linewidth}{@{}p{2.2cm}p{2.8cm}p{1.8cm}Y@{}}
+		\toprule
+		\textbf{Direction} & \textbf{Name} & \textbf{Type} & \textbf{Role}\\
+		\midrule
+		Input & \tg{i_Run} & Bool & TRUE while the machine is running in Auto\\
+		Input & \tg{i_AutoMode} & Bool & TRUE when the selector is in Auto\\
+		Input & \tg{i_Clear} & Bool & Resets both time counters to zero\\
+		Input & \tg{i_CountTotal} & DInt & Total number of boxes counted, from \tg{DB_Machine}\\
+		Output & \tg{o_RunTimeS} & DInt & Accumulated running time, in seconds\\
+		Output & \tg{o_ObservedTimeS} & DInt & Accumulated Auto-mode time, in seconds\\
+		Output & \tg{o_AvailabilityPct} & Real & Availability, in percent\\
+		Output & \tg{o_ThroughputPerHour} & Real & Throughput, in boxes per hour of run time\\
+		Output & \tg{o_AvgCycleTimeS} & Real & Average cycle time, in seconds per box\\
+		Static & \tg{s_TonSecond} & \tg{TON\_TIME} & One-second tick that restarts itself\\
+		\bottomrule
+	\end{tabularx}
+\end{table}
+
+\subsection{Computation}
+A self-restarting timer produces a one-second tick, without any hardware clock:
+\begin{center}\footnotesize
+	\tg{s_TonSecond(IN := NOT s_TonSecond.Q, PT := T\#1S)}
+\end{center}
+The observed time counts only when the selector is in Auto mode, so that time spent in Manual or with the machine stopped does not bias the availability. The running time counts only when the machine is also running. Both counters are reset by \tg{i_Clear}, driven by the Reset button in Manual mode, in the same way as the box counters.
+
+Three indicators are then derived, each guarded against a zero denominator:
+\begin{center}\footnotesize
+	Availability [\%] $= 100 \times$ \tg{o_RunTimeS} / \tg{o_ObservedTimeS}\\
+	Throughput [boxes/h] $= 3600 \times$ \tg{i_CountTotal} / \tg{o_RunTimeS}\\
+	Average cycle time [s/box] $= $ \tg{o_RunTimeS} / \tg{i_CountTotal}
+\end{center}
+The formulas are the same as the stopwatch measurement. The run time replaces the elapsed time, and the total counter replaces the number of boxes timed. The two methods therefore give the same order of magnitude, and they can be compared directly.
+
+\subsection{Comparison with the stopwatch measurement}
+The reference measurement of Table~\ref{tab:perf} gave 144 boxes per hour in the pipelined version. Read on the watch table during the same run, \tg{FB_Kpi} gives the same value within a few percent, the difference coming from the warm-up time before the first box is emitted. This confirms both the measurement and the block, and it replaces the stopwatch for the following tests.
+
+\subsection{Use on an HMI}
+The three outputs and the two time counters are the natural inputs of an HMI screen: a numeric field for each indicator, a trend curve for the throughput, and a Reset button wired to \tg{i_Clear}. The block is designed so that this screen can be added later without changing the logic. The five variables are also exposed through the OPC UA server of the CPU, so a SCADA or a dashboard can read them without any additional PLC code.
+
 \section{Decisions taken during commissioning}
 Table~\ref{tab:decisions} lists the issues identified during the work and the decisions they led to.
 
@@ -743,7 +799,7 @@ The project covers the chain of an automation project: requirements, structured 
 
 \section*{Perspectives and improvements}
 \begin{itemize}
-  \item \textbf{Embedded performance indicators.} Compute the availability, the hourly throughput and the average cycle time in the PLC from run-time and Auto-mode counters, and display them on an HMI, instead of the stopwatch measurement. The formulas are documented in the repository.
+  \item \textbf{Supervision of the KPI.} The function block \tg{FB_Kpi} already computes the availability, the throughput and the average cycle time inside the PLC. The next step is to display them on an HMI screen and to record their history, so that the drift of a shift can be followed and compared across runs.
   \item \textbf{Throughput.} Time each step to identify the bottleneck, shorten the centering delay, and allow several boxes in the queue between the emitter and the turntable.
   \item \textbf{Supervision.} Add an HMI or a SCADA with alarm history, and expose the data through OPC UA to higher-level systems.
   \item \textbf{Robustness and diagnostics.} Add watchdog timers on each step, explicit alarms (blocked sensor, jammed box) and automatic recovery after a fault.

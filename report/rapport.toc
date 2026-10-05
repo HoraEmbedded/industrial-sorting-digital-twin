@@ -23,28 +23,33 @@
 \contentsline {section}{\numberline {3.1}Program structure}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Design principles}{9}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Modes and safety}{9}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Output management}{10}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Summary}{11}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Sorting sequence}{12}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Principle}{12}{section.4.1}%
-\contentsline {section}{\numberline {4.2}GRAFCET}{12}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Pipelined emission}{13}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Counting and implementation}{13}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Summary}{15}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Electrical design of the control cabinet}{16}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Scope and assumptions}{16}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Cabinet architecture}{16}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Input and output allocation}{17}{section.5.3}%
-\contentsline {section}{\numberline {5.4}24 V DC supply}{17}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Emergency stop and interlocks}{17}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Drawings}{18}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Summary}{18}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Validation and results}{19}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Test plan}{19}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Throughput}{19}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Decisions taken during commissioning}{20}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Project organization}{21}{section.6.4}%
-\contentsline {chapter}{General conclusion}{22}{section*.41}%
-\contentsline {chapter}{References}{23}{section*.42}%
-\contentsline {chapter}{\numberline {A}Input and output lists}{24}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Electrical drawings}{26}{appendix.B}%
+\contentsline {section}{\numberline {3.4}Output management}{11}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Summary}{12}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Sorting sequence}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Principle}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}GRAFCET}{13}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Pipelined emission}{14}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Counting and implementation}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Summary}{16}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Electrical design of the control cabinet}{17}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Scope and assumptions}{17}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Cabinet architecture}{17}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Input and output allocation}{18}{section.5.3}%
+\contentsline {section}{\numberline {5.4}24 V DC supply}{18}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Emergency stop and interlocks}{18}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Drawings}{19}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Summary}{19}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Validation and results}{20}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Test plan}{20}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Throughput}{20}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Embedded performance indicators}{21}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Interface}{21}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Computation}{22}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Comparison with the stopwatch measurement}{22}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Use on an HMI}{22}{subsection.6.3.4}%
+\contentsline {section}{\numberline {6.4}Decisions taken during commissioning}{23}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Project organization}{23}{section.6.5}%
+\contentsline {chapter}{General conclusion}{25}{section*.42}%
+\contentsline {chapter}{References}{26}{section*.43}%
+\contentsline {chapter}{\numberline {A}Input and output lists}{27}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Electrical drawings}{29}{appendix.B}%

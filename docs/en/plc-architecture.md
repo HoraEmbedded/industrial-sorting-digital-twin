@@ -39,7 +39,8 @@ Design rules:
 | `OB1` Main | Calls the blocks below, in this order |
 | `FC9000` MHJ-PLC-Lab-Function-S71200 | Link with S7-PLCSIM, supplied with the Factory I/O template. Must stay first. |
 | `FB_ModeManager` | Auto and Manual selection, Start, Stop, emergency stop fault latch |
-| `FB_SortingLogic` | Sorting sequence, one box at a time (see sorting-sequence.md) |
+| `FB_SortingLogic` | Sorting sequence, pipelined emission, one box in process and the next emitted as soon as the turntable is free (see sorting-sequence.md) |
+| `FB_Kpi` | Availability, throughput and average cycle time computed in the PLC from run-time and Auto-mode counters |
 | `FC_Outputs` | Safety gating and writing of all `Q_` outputs, lamps, counter display |
 | `DB_Machine` | Machine status, actuator commands, counters |
 | `UDT_ActuatorCmd` | One bit per actuator command |
@@ -75,6 +76,8 @@ Lamps: green and start light follow `Run`. Red and stop light follow NOT `Run`. 
 | InOut | `io_CountLeft`, `io_CountRight`, `io_CountTotal` | Int | Counters |
 | Input | `i_AtFront` | Bool | Queue sensor in front of the turntable |
 | Input | `i_CenterTime` | Time | Centering delay after the box reaches the turntable center |
+| Static | `s_LeftInTransit` | Int | Boxes in transit on the left exit conveyor, incremented at `I_AtLeftEntry`, decremented at the exit count |
+| Static | `s_RightInTransit` | Int | Boxes in transit on the right exit conveyor, incremented at `I_AtRightEntry`, decremented at the exit count |
 
 ## DB_Machine additions
 

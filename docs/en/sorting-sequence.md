@@ -6,8 +6,10 @@ The PLC sorts boxes one after the other. It emits a box, measures its height at 
 
 | Box | `I_HighBox` seen | Roller command | Destination |
 | --- | --- | --- | --- |
-| Low | No | `Load` | Left conveyor |
-| High | Yes | `Unload` | Right conveyor |
+| Low | No | `Unload` | Left conveyor |
+| High | Yes | `Load` | Right conveyor |
+
+The direction follows the physical layout of the turntable. A low box goes to the left conveyor: the rollers must push it out with `Unload`. A high box goes to the right conveyor: the rollers must push it out with `Load`. This is the opposite of an intuitive naming, but it matches the internal roller direction of the Factory I/O scene (confirmed in scene-behavior.md, E05).
 
 A high box always triggers both beams (see scene-behavior.md, E03), so the rule only needs `I_HighBox`. A box that triggers no beam is treated as Low.
 

@@ -55,6 +55,6 @@ Run in Auto mode with `WT_Sorting` online, unless stated otherwise.
 | Measurement | Value |
 | --- | --- |
 | Time for 10 boxes in T17 (s) | 250 s |
-| Throughput (boxes per hour) = 36000 / time | 144 |
+| Throughput (boxes per hour) = 36000 / time for 10 boxes | 144 |
 | Low boxes and High boxes seen in T17 | 7 Low / 3 High |
 

@@ -8,22 +8,23 @@
 \contentsline {table}{\numberline {2.3}{\ignorespaces Naming conventions.}}{7}{table.caption.18}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Blocks of the program.}}{8}{table.caption.19}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Behaviour of the machine.}}{9}{table.caption.21}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Latches of \texttt {FB\_ModeManager}.}}{9}{table.caption.22}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Lamps and counter display.}}{11}{table.caption.24}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Behaviour of the machine.}}{10}{table.caption.21}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Latches of \texttt {FB\_ModeManager}.}}{10}{table.caption.22}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Lamps and counter display.}}{12}{table.caption.24}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Actions of the steps.}}{12}{table.caption.26}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Transitions of the sequence.}}{13}{table.caption.27}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Actions of the steps.}}{13}{table.caption.26}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Transitions of the sequence.}}{14}{table.caption.27}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Devices of the cabinet.}}{16}{table.caption.30}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Allocation of the inputs and outputs.}}{17}{table.caption.31}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces 24 V DC budget.}}{17}{table.caption.32}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Sheets of the electrical schematic.}}{18}{table.caption.33}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Devices of the cabinet.}}{17}{table.caption.30}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Allocation of the inputs and outputs.}}{18}{table.caption.31}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces 24 V DC budget.}}{18}{table.caption.32}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Sheets of the electrical schematic.}}{19}{table.caption.33}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Summary of the tests.}}{19}{table.caption.34}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Throughput measured on 10 boxes.}}{19}{table.caption.35}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Issues identified and decisions taken.}}{21}{table.caption.38}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Summary of the tests.}}{20}{table.caption.34}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Throughput measured on 10 boxes.}}{20}{table.caption.35}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Interface of \texttt {FB\_Kpi}.}}{22}{table.caption.38}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Issues identified and decisions taken.}}{23}{table.caption.39}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Inputs of the scene (18).}}{24}{table.caption.44}%
-\contentsline {table}{\numberline {A.2}{\ignorespaces Outputs of the scene (17).}}{25}{table.caption.45}%
+\contentsline {table}{\numberline {A.1}{\ignorespaces Inputs of the scene (18).}}{27}{table.caption.45}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Outputs of the scene (17).}}{28}{table.caption.46}%
 \addvspace {10\p@ }
