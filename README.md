@@ -2,7 +2,7 @@
 
 Digital twin and PLC control of an industrial sorting line, built with Siemens TIA Portal, S7-PLCSIM and Factory I/O.
 
-![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+![Status](https://img.shields.io/badge/status-%100completed-green)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![PLC](https://img.shields.io/badge/PLC-Siemens%20S7--1200-blue)
 ![Twin](https://img.shields.io/badge/twin-Factory%20I%2FO-green)
